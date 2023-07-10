@@ -2,6 +2,7 @@ package com.example.contacts.di
 
 import com.example.contacts.api.ContactsApi
 import com.example.contacts.common.Constants
+import com.example.contacts.repository.ContactsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +23,10 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ContactsApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideContactsRepository(api: ContactsApi):ContactsRepository{
+        return ContactsRepository(api)
+    }
 }

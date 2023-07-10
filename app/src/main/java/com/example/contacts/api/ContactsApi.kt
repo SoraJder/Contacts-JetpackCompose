@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface ContactsApi {
 
-    @GET("/users")
+    @GET("public/v2/users")
     suspend fun getContacts():List<ContactDto>
 
 }
