@@ -1,4 +1,4 @@
-package com.example.common
+package com.example.contacts.common
 
 sealed class Resource<out T> {
     object Loading : Resource<Nothing>()
