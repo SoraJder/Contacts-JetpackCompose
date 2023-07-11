@@ -23,9 +23,9 @@ class ContactsRepository @Inject constructor(
             Resource.Success(contacts)
         } catch (e: IOException) {
             e.printStackTrace()
-            Resource.Failure(e)
+            Resource.Failure("Couldn't reach server. Check your internet connection.")
         } catch (e: HttpException) {
-            Resource.Failure(e)
+            Resource.Failure("An unexpected error occurred.")
         }
 
 }

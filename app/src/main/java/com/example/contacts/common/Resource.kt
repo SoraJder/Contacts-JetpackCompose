@@ -7,6 +7,6 @@ sealed class Resource<out T> {
     ) : Resource<T>()
 
     data class Failure(
-        val e: Exception
+        val message:String
     ) : Resource<Nothing>()
 }
