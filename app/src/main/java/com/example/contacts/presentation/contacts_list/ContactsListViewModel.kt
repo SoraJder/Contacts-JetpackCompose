@@ -18,7 +18,7 @@ class ContactsListViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _stateFlow: MutableStateFlow<Resource<List<Contact>>> =
-        MutableStateFlow<Resource<List<Contact>>>(Resource.Loading)
+        MutableStateFlow(Resource.Loading)
     val stateFlow: StateFlow<Resource<List<Contact>>> = _stateFlow.asStateFlow()
 
     init {

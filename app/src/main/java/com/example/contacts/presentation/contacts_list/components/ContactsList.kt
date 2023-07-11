@@ -14,13 +14,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.contacts.model.Contact
 import com.example.contacts.ui.theme.BackgroundListColor
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ContactsList(
-    contactsList: List<Contact>
+    contactsList: List<Contact>,
+    navController: NavController
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
@@ -42,7 +44,10 @@ fun ContactsList(
                 )
             }
             items(contactsList) { contact ->
-                ContactListItem(contact = contact)
+                ContactListItem(
+                    contact = contact,
+                    navController=navController
+                )
                 Divider(thickness = 1.dp, color = Color(243, 246, 249))
             }
         }

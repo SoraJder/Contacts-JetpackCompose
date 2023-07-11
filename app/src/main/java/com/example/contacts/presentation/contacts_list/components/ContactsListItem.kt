@@ -24,23 +24,30 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.contacts.common.Utils
 import com.example.contacts.model.Contact
+import com.example.contacts.navigation.ContactIdHolder
+import com.example.contacts.navigation.Screens
 import com.example.contacts.ui.theme.ImageLogoColor
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun ContactListItem(
-    contact: Contact
+    contact: Contact,
+    navController: NavController
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .background(Color.White)
             .padding(vertical = 16.dp)
-            .clickable { },
+            .clickable {
+                navController.navigate(Screens.PROFILE_SCREEN)
+                ContactIdHolder.contactId = contact.id.toString()
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (contact.id % 2 != 0) {

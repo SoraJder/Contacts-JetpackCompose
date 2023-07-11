@@ -3,6 +3,7 @@ package com.example.contacts.di
 import com.example.contacts.api.ContactsApi
 import com.example.contacts.common.Constants
 import com.example.contacts.repository.ContactsRepository
+import com.example.contacts.repository.ProfileRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +27,13 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideContactsRepository(api: ContactsApi):ContactsRepository{
+    fun providesContactsRepository(api: ContactsApi):ContactsRepository{
         return ContactsRepository(api)
+    }
+
+    @Provides
+    @Singleton
+    fun providesProfileRepository(api: ContactsApi): ProfileRepository{
+        return ProfileRepository(api)
     }
 }
