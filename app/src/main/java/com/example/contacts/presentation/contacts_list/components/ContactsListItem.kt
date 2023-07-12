@@ -29,7 +29,7 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.contacts.common.Utils
 import com.example.contacts.model.Contact
-import com.example.contacts.navigation.ContactIdHolder
+import com.example.contacts.navigation.ContactHolder
 import com.example.contacts.navigation.Screens
 import com.example.contacts.ui.theme.ImageLogoColor
 
@@ -46,7 +46,10 @@ fun ContactListItem(
             .padding(vertical = 16.dp)
             .clickable {
                 navController.navigate(Screens.PROFILE_SCREEN)
-                ContactIdHolder.contactId = contact.id.toString()
+
+                ContactHolder.contactId = contact.id.toString()
+                ContactHolder.email = contact.email
+                ContactHolder.name = contact.name
             },
         verticalAlignment = Alignment.CenterVertically
     ) {

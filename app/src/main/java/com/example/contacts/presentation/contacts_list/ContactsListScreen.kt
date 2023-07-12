@@ -31,7 +31,7 @@ fun ContactsListScreen(
             is Resource.Success -> {
                 ContactsList(
                     contactsList = resource.data,
-                   navController= navController
+                    navController = navController
                 )
             }
         }

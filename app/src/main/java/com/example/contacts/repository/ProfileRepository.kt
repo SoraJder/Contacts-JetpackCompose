@@ -13,18 +13,6 @@ import javax.inject.Inject
 class ProfileRepository @Inject constructor(
     private val api: ContactsApi
 ) {
-    suspend fun getContact(contactId: String): Resource<Contact> =
-        try {
-            val result = api.getContact(contactId = contactId).toContact()
-            Resource.Success(result)
-        } catch (e: IOException) {
-            e.printStackTrace()
-            Resource.Failure(message = "Couldn't load user")
-        } catch (e: HttpException) {
-            e.printStackTrace()
-            Resource.Failure(message = "Couldn't load user")
-        }
-
     suspend fun getContactPosts(contactId: String): Resource<List<Post>> =
         try {
             val result = api
