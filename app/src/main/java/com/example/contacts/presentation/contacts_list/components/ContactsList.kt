@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.contacts.model.Contact
@@ -27,7 +28,8 @@ fun ContactsList(
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
             text = "Contacte",
-            style = MaterialTheme.typography.headlineLarge,
+            fontWeight = FontWeight.Bold,
+            style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(16.dp)
         )
         LazyColumn(

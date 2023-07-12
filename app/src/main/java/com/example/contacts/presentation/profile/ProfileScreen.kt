@@ -1,6 +1,5 @@
 package com.example.contacts.presentation.profile
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -8,6 +7,7 @@ import androidx.navigation.NavHostController
 import com.example.contacts.common.Resource
 import com.example.contacts.common.composables.LoadingIndicator
 import com.example.contacts.common.composables.ScreenFailure
+import com.example.contacts.presentation.profile.components.ScaffoldPosts
 
 @Composable
 fun ProfileScreen(
@@ -27,7 +27,9 @@ fun ProfileScreen(
             }
 
             is Resource.Success -> {
-                Log.d("TEST", resource.data.toString())
+                ScaffoldPosts(
+                    navController = navController
+                )
             }
         }
     }

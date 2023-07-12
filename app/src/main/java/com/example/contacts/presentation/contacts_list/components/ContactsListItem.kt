@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.example.contacts.common.Constants
 import com.example.contacts.common.Utils
 import com.example.contacts.model.Contact
 import com.example.contacts.navigation.ContactHolder
@@ -55,7 +56,7 @@ fun ContactListItem(
     ) {
         if (contact.id % 2 != 0) {
             GlideImage(
-                model = "https://picsum.photos/200/200",
+                model = Constants.IMAGE_URL,
                 contentDescription = null,
                 modifier = Modifier
                     .padding(start = 16.dp)
