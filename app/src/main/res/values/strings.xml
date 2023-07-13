@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Contacts</string>
+    <string name="contacte">Contacte</string>
+    <string name="contactele_mele">CONTACTELE MELE</string>
+    <string name="detalii_contact">Detalii contact</string>
+    <string name="please_try_again_later">Please try again later.</string>
 </resources>

@@ -28,7 +28,8 @@ fun ProfileScreen(
 
             is Resource.Success -> {
                 ScaffoldPosts(
-                    navController = navController
+                    navController = navController,
+                    postsList = resource.data
                 )
             }
         }

@@ -14,5 +14,4 @@ fun ContactDto.toContact() = Contact(
     email = email,
     id = id,
     name = name,
-    status = status
 )

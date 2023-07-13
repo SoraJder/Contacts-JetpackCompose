@@ -13,11 +13,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.contacts.R
 import com.example.contacts.model.Contact
 import com.example.contacts.ui.theme.BackgroundListColor
+import com.example.contacts.ui.theme.PostColor
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -25,9 +28,15 @@ fun ContactsList(
     contactsList: List<Contact>,
     navController: NavController
 ) {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(
+                top = 32.dp, bottom = 16.dp
+            )
+    ) {
         Text(
-            text = "Contacte",
+            text = stringResource(R.string.contacte),
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(16.dp)
@@ -39,7 +48,7 @@ fun ContactsList(
         ) {
             stickyHeader {
                 Text(
-                    text = "CONTACTELE MELE",
+                    text = stringResource(R.string.contactele_mele),
                     style = MaterialTheme.typography.titleSmall,
                     color = Color(0xFF9DAAC2),
                     modifier = Modifier.padding(16.dp),
@@ -48,9 +57,9 @@ fun ContactsList(
             items(contactsList) { contact ->
                 ContactListItem(
                     contact = contact,
-                    navController=navController
+                    navController = navController
                 )
-                Divider(thickness = 1.dp, color = Color(243, 246, 249))
+                Divider(thickness = 1.dp, color = PostColor)
             }
         }
     }

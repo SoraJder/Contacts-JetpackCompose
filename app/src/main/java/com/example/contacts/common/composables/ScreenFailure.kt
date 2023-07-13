@@ -12,8 +12,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.contacts.R
 
 @Composable
 fun ScreenFailure(
@@ -34,7 +36,7 @@ fun ScreenFailure(
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = "Please try again later.",
+            text = stringResource(R.string.please_try_again_later),
             color = MaterialTheme.colorScheme.error,
             textAlign = TextAlign.Center,
             modifier = Modifier

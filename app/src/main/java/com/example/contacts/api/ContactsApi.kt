@@ -10,10 +10,6 @@ interface ContactsApi {
     @GET("public/v2/users")
     suspend fun getContacts(): List<ContactDto>
 
-    @GET("public/v2/users/{contactId}")
-    suspend fun getContact(@Path("contactId") contactId: String): ContactDto
-
     @GET("public/v2/users/{contactId}/posts")
     suspend fun getPosts(@Path("contactId") contactId: String): List<PostDto>
-
 }

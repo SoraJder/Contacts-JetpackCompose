@@ -10,7 +10,6 @@ data class PostDto(
 )
 
 fun PostDto.toPost() = Post(
-    userId = userId,
     title = title,
     body = body
 )
